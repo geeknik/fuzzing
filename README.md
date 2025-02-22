@@ -4,6 +4,9 @@
 ## grammar files
 * grammars/openssl-rsa-private-key.json is meant to be used with the AFL++ [Grammar Mutator](https://github.com/AFLplusplus/Grammar-Mutator) ⬅️
 
+## dictionary files
+* dictionary/sshkey.dict is meant to be used while fuzzing ssh key handling
+
 ## reading material
 
 ##
