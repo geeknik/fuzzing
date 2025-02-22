@@ -4,8 +4,6 @@
         ["<publicKeyFile>"],
         ["<sshPacket>"]
     ],
-
-    /* --- Key Parsing: Private Key File --- */
     "<privateKeyFile>": [["-----BEGIN OPENSSH PRIVATE KEY-----\n", "<base64Block>", "-----END OPENSSH PRIVATE KEY-----\n"]],
     "<base64Block>": [["<base64Line>", "<base64Block>"], ["<base64Line>"]],
     "<base64Line>": [["<base64Characters>\n"]],
@@ -20,19 +18,19 @@
         ["8"], ["9"], ["+"], ["/"], ["="]
     ],
     "<privateKeyBinary>": [["<header>", "<cipher>", "<kdf>", "<kdfoptions>", "<numKeys>", "<pubKey>", "<privKeyData>"]],
-    "<header>": [["6F70656E7373682D6B65792D763100"]],  // "openssh-key-v1\x00"
-    "<cipher>": [["000000046E6F6E65"], ["00000006616573323536"]],  // "none" or "aes256"
-    "<kdf>": [["000000046E6F6E65"], ["00000009626372797074"]],  // "none" or "bcrypt"
+    "<header>": [["6F70656E7373682D6B65792D763100"]],
+    "<cipher>": [["000000046E6F6E65"], ["00000006616573323536"]],
+    "<kdf>": [["000000046E6F6E65"], ["00000009626372797074"]],
     "<kdfoptions>": [["00000000"], ["@len <kdfSaltRounds>", "<kdfSaltRounds>"]],
     "<kdfSaltRounds>": [["<bytes>", "<uint32>"]],
-    "<numKeys>": [["00000001"]],  // uint32 1
+    "<numKeys>": [["00000001"]],
     "<pubKey>": [["@len <pubKeyData>", "<pubKeyData>"]],
     "<pubKeyData>": [["000000077373682D727361", "<mpint_e>", "<mpint_n>"]],
     "<privKeyData>": [["@len <privKeyContent>", "<privKeyContent>"]],
     "<privKeyContent>": [["<checkint1>", "<checkint2>", "<keytype>", "<mpint_n>", "<mpint_e>", "<mpint_d>", "<mpint_iqmp>", "<mpint_p>", "<mpint_q>", "<padding>"]],
     "<checkint1>": [["<uint32>"]],
     "<checkint2>": [["<uint32>"]],
-    "<keytype>": [["000000077373682D727361"], ["0000000965636473612D73686132"]],  // "ssh-rsa" or "ecdsa-sha2"
+    "<keytype>": [["000000077373682D727361"], ["0000000965636473612D73686132"]],
     "<mpint_n>": [["@mpint <bytes>"]],
     "<mpint_e>": [["@mpint <bytes>"]],
     "<mpint_d>": [["@mpint <bytes>"]],
@@ -40,14 +38,10 @@
     "<mpint_p>": [["@mpint <bytes>"]],
     "<mpint_q>": [["@mpint <bytes>"]],
     "<padding>": [["<bytes>"]],
-
-    /* --- Key Parsing: Public Key File --- */
     "<publicKeyFile>": [["<pubKeyType> ", "<base64PubKey> ", "<comment>\n"]],
     "<pubKeyType>": [["ssh-rsa"], ["ecdsa-sha2-nistp256"]],
     "<base64PubKey>": [["<base64Characters>"]],
     "<comment>": [["user@host"], ["test"], [""]],
-
-    /* --- Network Input: SSH Protocol Packets --- */
     "<sshPacket>": [
         ["<sshVersionString>"],
         ["<kexInitPacket>"],
@@ -71,20 +65,18 @@
     "<authRequestPacket>": [["@len <authRequestData>", "<authRequestData>"]],
     "<authRequestData>": [["32", "<username>", "<serviceName>", "<methodName>", "<methodData>"]],
     "<username>": [["@len <string>", "<string>"]],
-    "<serviceName>": [["0000000C7373682D636F6E6E656374696F6E"]],  // "ssh-connection"
-    "<methodName>": [["0000000670617373776F7264"], ["0000000A7075626C69636B6579"]],  // "password" or "publickey"
+    "<serviceName>": [["0000000C7373682D636F6E6E656374696F6E"]],
+    "<methodName>": [["0000000670617373776F7264"], ["0000000A7075626C69636B6579"]],
     "<methodData>": [["<passwordData>"], ["<pubkeyData>"]],
     "<passwordData>": [["00", "@len <string>", "<string>"]],
     "<pubkeyData>": [["01", "@len <string>", "<string>", "@len <string>", "<string>"]],
     "<channelOpenPacket>": [["@len <channelOpenData>", "<channelOpenData>"]],
     "<channelOpenData>": [["11", "<channelType>", "<senderChannel>", "<initialWindowSize>", "<maxPacketSize>", "<channelSpecificData>"]],
-    "<channelType>": [["0000000773657373696F6E"]],  // "session"
+    "<channelType>": [["0000000773657373696F6E"]],
     "<senderChannel>": [["<uint32>"]],
     "<initialWindowSize>": [["<uint32>"]],
     "<maxPacketSize>": [["<uint32>"]],
     "<channelSpecificData>": [["<bytes>"]],
-
-    /* --- Generic Rules --- */
     "<string>": [["<char>", "<string>"], []],
     "<char>": [
         ["a"], ["b"], ["c"], ["d"], ["e"], ["f"], ["g"], ["h"], ["i"], ["j"],
