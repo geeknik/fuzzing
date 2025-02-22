@@ -1,0 +1,5 @@
+"ssh-rsa"
+"ssh-ed25519"
+"ecdsa-sha2-nistp256"
+"\x00\x00\x00\x07"  # 7-byte string length (e.g., for "ssh-rsa")
+"\x00\x00\x00\x0b"  # 11-byte string length (e.g., for "ssh-ed25519")
