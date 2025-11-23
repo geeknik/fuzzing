@@ -10,4 +10,4 @@
 ## reading material
 
 ##
-![image](https://github.com/geeknik/fuzzing/assets/466878/cf65ee58-7759-4ba1-9b44-5ac01445870d)
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/5bca23a0-78c0-4954-b2b9-1fc12db17650" />
