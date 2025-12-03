@@ -1,0 +1,80 @@
+# Control operators
+";"
+"&&"
+"||"
+"|"
+"|&"
+"&"
+"("
+")"
+"{"
+"}"
+
+# Redirections
+"<"
+">"
+">>"
+"2>"
+"2>&1"
+"&>"
+"<<EOF"
+"<<-EOF"
+
+# Quotes
+"'"
+"\""
+"''"
+"\"\""
+"'single quoted'"
+"\"double quoted\""
+"\"with \\\"quote\\\"\""
+"$'escape\\nsequence'"
+
+# Parameter expansion
+"$VAR"
+"${VAR}"
+"${VAR:-default}"
+"${#VAR}"
+"${VAR%suffix}"
+"${VAR#prefix}"
+"${VAR/a/b}"
+"${!INDIRECT}"
+
+# Command substitution
+"`cmd`"
+"$(cmd)"
+"$(echo nested $(echo inner))"
+
+# Wildcards / globs
+"*"
+"?"
+"*.*"
+"[a-z]"
+"{a,b,c}"
+
+# Shebang & functions
+"#!/bin/sh"
+"#!/bin/bash"
+"fn() { :; }"
+"function fn { :; }"
+
+# Common commands
+"echo"
+"printf"
+"test"
+"["
+"]"
+"if"
+"then"
+"else"
+"fi"
+"for"
+"do"
+"done"
+
+# Injection-ish fragments
+"; rm -rf /"
+"|| true"
+"&& false"
+"`id`"
+"$(id)"
