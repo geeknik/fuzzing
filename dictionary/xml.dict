@@ -1,0 +1,63 @@
+# Tags and delimiters
+"<"
+">"
+"</"
+"/>"
+"<!--"
+"-->"
+"<?"
+"?>"
+"<![CDATA["
+"]]>"
+
+# XML declaration
+"<?xml version=\"1.0\"?>"
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+
+# Common tags
+"<root>"
+"</root>"
+"<data>"
+"</data>"
+"<item>"
+"</item>"
+"<a>"
+"</a>"
+
+# Attributes
+" id=\"1\""
+" name=\"test\""
+" value=\"&lt;script&gt;\""
+" xmlns=\"http://example.com/ns\""
+" xmlns:x=\"urn:x\""
+
+# Entities
+"&lt;"
+"&gt;"
+"&amp;"
+"&quot;"
+"&apos;"
+"&#x00;"
+"&#0;"
+"&#xD800;"   # surrogate
+"&#xFFFF;"
+"&#x110000;"
+
+# DTD / external entities (XXE paths)
+"<!DOCTYPE root>"
+"<!DOCTYPE root [ ]>"
+"<!DOCTYPE root [ <!ENTITY x \"test\"> ]>"
+"<!DOCTYPE root [ <!ENTITY x SYSTEM \"file:///etc/passwd\"> ]>"
+"<!DOCTYPE root [ <!ENTITY x SYSTEM \"http://127.0.0.1:80\"> ]>"
+
+# CDATA samples
+"<![CDATA[foo]]>"
+"<![CDATA[<tag>inside</tag>]]>"
+
+# Pathological whitespace
+"<root \n\t attr=\"1\" >"
+"</root \n>"
+
+# Self-closing
+"<empty/>"
+"<empty />"
