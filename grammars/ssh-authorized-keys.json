@@ -1,0 +1,57 @@
+{
+  "<start>": [
+    ["<keyLine>"],
+    ["<keyLine>", "<keyLine>"]
+  ],
+
+  "<keyLine>": [
+    ["<optionsOpt>", "<keyType>", " ", "<base64Key>", " ", "<comment>", "\n"],
+    ["<keyType>", " ", "<base64Key>", "\n"]
+  ],
+
+  "<optionsOpt>": [
+    [""],
+    ["<optionList>", " "]
+  ],
+  "<optionList>": [
+    ["<option>"],
+    ["<option>", ",", "<optionList>"]
+  ],
+  "<option>": [
+    ["no-pty"],
+    ["no-port-forwarding"],
+    ["no-agent-forwarding"],
+    ["command=\"/bin/sh\""],
+    ["from=\"127.0.0.1\""]
+  ],
+
+  "<keyType>": [
+    ["ssh-rsa"],
+    ["ssh-ed25519"],
+    ["ecdsa-sha2-nistp256"],
+    ["ecdsa-sha2-nistp384"],
+    ["ecdsa-sha2-nistp521"]
+  ],
+
+  "<base64Key>": [
+    ["<base64Char>", "<base64Key>"],
+    ["<base64Char>"]
+  ],
+  "<base64Char>": [
+    ["A"], ["B"], ["C"], ["D"], ["E"], ["F"], ["G"], ["H"], ["I"], ["J"],
+    ["K"], ["L"], ["M"], ["N"], ["O"], ["P"], ["Q"], ["R"], ["S"], ["T"],
+    ["U"], ["V"], ["W"], ["X"], ["Y"], ["Z"],
+    ["a"], ["b"], ["c"], ["d"], ["e"], ["f"], ["g"], ["h"], ["i"], ["j"],
+    ["k"], ["l"], ["m"], ["n"], ["o"], ["p"], ["q"], ["r"], ["s"], ["t"],
+    ["u"], ["v"], ["w"], ["x"], ["y"], ["z"],
+    ["0"], ["1"], ["2"], ["3"], ["4"], ["5"], ["6"], ["7"], ["8"], ["9"],
+    ["+"], ["/"], ["="]
+  ],
+
+  "<comment>": [
+    ["user@host"],
+    ["root@localhost"],
+    ["test"],
+    [""]
+  ]
+}
