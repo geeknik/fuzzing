@@ -1,0 +1,51 @@
+# Sections
+"[section]"
+"[section.sub]"
+"[123]"
+"[_weird_]"
+
+# Keys and separators
+"key="
+"key ="
+"key = value"
+"key:value"
+"key: value"
+
+# Values
+"value"
+"123"
+"true"
+"false"
+"on"
+"off"
+"yes"
+"no"
+"\"quoted\""
+"'single-quoted'"
+
+# Paths
+"/etc/passwd"
+"C:\\Windows\\system.ini"
+"./relative/path"
+
+# Comments
+";"
+"; comment"
+"#"
+"# comment"
+"key=value ; inline"
+"key=value # inline"
+
+# Whitespace
+" "
+"\t"
+" \t "
+"\n"
+"\r\n"
+
+# Duplicate keys / sections
+"[section]"
+"key=1"
+"key=2"
+"[section]"
+"key=3"
