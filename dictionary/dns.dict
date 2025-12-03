@@ -1,0 +1,64 @@
+# QTYPE / RR type mnemonics
+"A"
+"AAAA"
+"CNAME"
+"MX"
+"NS"
+"TXT"
+"SOA"
+"PTR"
+"SRV"
+"CAA"
+"DNSKEY"
+"RRSIG"
+"NAPTR"
+"ANY"
+
+# Classes
+"IN"
+"CH"
+"HS"
+
+# Name forms
+"."
+"example"
+"example.com"
+".example.com"
+"www.example.com"
+"*"
+"*.example.com"
+"xn--exmple-cua.com"
+"1.2.3.4.in-addr.arpa"
+
+# TXT payload fragments
+"\"\""
+"\"short\""
+"\"very long text segment\""
+"\"segment1\" \"segment2\""
+
+# SRV-style
+"_sip._tcp.example.com"
+"_ldap._tcp.example.com"
+
+# Wire-format label lengths
+"\x00"          # root label
+"\x01a"
+"\x03www"
+"\x07example"
+"\x03com"
+"\xc0\x0c"      # compression pointer
+"\x3f"          # max 63
+"\x40"          # 64; invalid as length
+
+# QTYPE numeric (16-bit)
+"\x00\x01"      # A
+"\x00\x1c"      # AAAA
+"\x00\x0f"      # MX
+"\x00\xff"      # ANY
+"\xff\xff"      # max
+
+# Header flags bits
+"\x01\x00"      # recursion desired
+"\x81\x80"      # standard response
+"\x00\x00"      # no flags
+"\xff\xff"      # all flags set
