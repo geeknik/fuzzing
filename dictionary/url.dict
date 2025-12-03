@@ -1,0 +1,73 @@
+# Schemes
+"http://"
+"https://"
+"ftp://"
+"ssh://"
+"file://"
+"mailto:"
+
+# Auth/userinfo
+"admin:"
+"admin:admin@"
+"user:pass@"
+":pass@"
+"@"
+
+# Hosts
+"localhost"
+"127.0.0.1"
+"0.0.0.0"
+"::1"
+"[::1]"
+"example.com"
+"xn--exmple-cua.com"  # IDN-ish
+
+# Ports
+":80"
+":443"
+":0"
+":65535"
+":65536"
+
+# Paths
+"/"
+"/."
+"/.."
+"/./../"
+"/%2e%2e/"
+"/../../etc/passwd"
+"/api/v1/test"
+"/foo/bar/"
+
+# Query separators
+"?"
+"&"
+"="
+";"
+
+# Query patterns
+"?id=1"
+"?id="
+"?id=../.."
+"?q=test"
+"?q=%0d%0aInjected:header"
+"?a=1&b=2"
+"?a=1&a=2"
+
+# Fragments
+"#"
+"#top"
+"#/../etc/passwd"
+"#%00"
+
+# Encodings
+"%00"
+"%20"
+"%2F"
+"%3A"
+"%25"
+"%C0%AF"
+"%E0%80%AF"
+"%F0%80%80%AF"
+"+"
+"%2b"
