@@ -1,5 +1,117 @@
+# Common OpenSSH key types
 "ssh-rsa"
+"ssh-dss"
 "ssh-ed25519"
+"ssh-ed25519-cert-v01@openssh.com"
+"ssh-rsa-cert-v01@openssh.com"
+"ssh-dss-cert-v01@openssh.com"
 "ecdsa-sha2-nistp256"
-"\x00\x00\x00\x07"  # 7-byte string length (e.g., for "ssh-rsa")
-"\x00\x00\x00\x0b"  # 11-byte string length (e.g., for "ssh-ed25519")
+"ecdsa-sha2-nistp384"
+"ecdsa-sha2-nistp521"
+
+# ECDSA curve identifiers
+"nistp256"
+"nistp384"
+"nistp521"
+
+# OpenSSH Private Key Magic
+"openssh-key-v1\0"
+
+# Common key options (authorized_keys)
+"command=\"/bin/sh\""
+"no-port-forwarding"
+"no-agent-forwarding"
+"no-pty"
+"from=\"127.0.0.1\""
+"environment=\"EVIL=1\""
+
+# Common comment patterns
+"root@localhost"
+"user@machine"
+"test@fuzzer"
+"AAAAAAAAAAAAAAAAAAAAAA"
+
+# Base64 test fragments (common padding variants)
+"A"
+"AA=="
+"AAA="
+"AAAA"
+"/+///+//"
+"===="
+"AAAAB3NzaC1yc2EAAAADAQABAAABAQ"   # prefix of many rsa keys
+
+# Binary SSH string length prefixes (big-endian)
+"\x00\x00\x00\x00"   # empty
+"\x00\x00\x00\x01"   # 1-byte string
+"\x00\x00\x00\x04"   # typical small field
+"\x00\x00\x00\x07"   # "ssh-rsa"
+"\x00\x00\x00\x08"   # "ssh-dss"
+"\x00\x00\x00\x0b"   # "ssh-ed25519"
+"\x00\x00\x00\x13"   # "ecdsa-sha2-nistp256"
+"\x7f\xff\xff\xff"   # max 31-bit length
+"\xff\xff\xff\xff"   # pathological max length
+
+# Binary multi-field test sequences
+"\x00\x00\x00\x07ssh-rsa"
+"\x00\x00\x00\x0bssh-ed25519"
+"\x00\x00\x00\x13ecdsa-sha2-nistp256"
+
+# Private key KDF sections
+"none"
+"bcrypt"
+"bcrypt_pbkdf"
+"\x00\x00\x00\x04none"
+"\x00\x00\x00\x06bcrypt"
+
+# Encrypted OpenSSH private key cipher names
+"aes256-ctr"
+"aes256-gcm@openssh.com"
+"chacha20-poly1305@openssh.com"
+
+# PEM headers
+"-----BEGIN RSA PUBLIC KEY-----"
+"-----END RSA PUBLIC KEY-----"
+"-----BEGIN RSA PRIVATE KEY-----"
+"-----END RSA PRIVATE KEY-----"
+"-----BEGIN OPENSSH PRIVATE KEY-----"
+"-----END OPENSSH PRIVATE KEY-----"
+"-----BEGIN EC PRIVATE KEY-----"
+"-----END EC PRIVATE KEY-----"
+"-----BEGIN PRIVATE KEY-----"
+"-----END PRIVATE KEY-----"
+"-----BEGIN ENCRYPTED PRIVATE KEY-----"
+"-----END ENCRYPTED PRIVATE KEY-----"
+
+# Known bad / tricky PEM variants
+"-----BEGIN  RSA  PRIVATE  KEY-----"
+"-----BEGIN-----"
+"-----END-----"
+"-----BEGIN OPENSSH KEY-----"
+"---INVALID---"
+
+# Known_hosts hashed hostnames
+"|1|AAAAAAAAAAAAAAAAAAAAAA==|BBBBBBBBBBBBBBBBBBBBBB=="
+"|1|deadbeefdeadbeefdeadbe==|c0ffee0000ffffaaaa0000=="
+
+# Key algo abuse variants
+"ssh-rsa-cert-v00@openssh.com"
+"ssh-ed25519-cert-v00@openssh.com"
+"ecdsa-sha2-UNKNOWN123"
+
+# UTF-8 edge cases that some parsers mishandle
+"π"
+"🚀"
+"𐍈"
+"💥💥💥"
+
+# Suspicious whitespace sequences
+"\n"
+"\r"
+"\r\n"
+" \t \t "
+"\n\n\n\n"
+
+# Long padding noise
+"AAAAA==="
+"AAAAAAA="
+"AAAAAAAA"
