@@ -1,0 +1,78 @@
+# Anchors
+"^"
+"$"
+"\\A"
+"\\Z"
+"\\b"
+"\\B"
+
+# Quantifiers
+"*"
+"+"
+"?"
+"{0}"
+"{1}"
+"{0,}"
+"{1,}"
+"{0,1}"
+"{1,2}"
+"{,2}"
+
+# Character classes
+"."
+"\\d"
+"\\D"
+"\\w"
+"\\W"
+"\\s"
+"\\S"
+"[a-z]"
+"[A-Z]"
+"[0-9]"
+"[^0-9]"
+"[\\w\\d]"
+"[]"
+"[^]"
+
+# Groups
+"()"
+"(?:)"
+"(?=a)"
+"(?!a)"
+"(?<=a)"
+"(?<!a)"
+"(?P<name>a)"      # Python-style
+"(?<name>a)"       # .NET/PCRE-style
+
+# Alternation
+"a|b"
+"a|b|c"
+"(a|b)c"
+"(?:a|b)c"
+
+# Escapes
+"\\n"
+"\\r"
+"\\t"
+"\\0"
+"\\x00"
+"\\xFF"
+"\\u0000"
+"\\uFFFF"
+
+# Backreferences
+"(a)\\1"
+"(.)(.)\\2\\1"
+
+# Unicode, if supported
+"\\p{L}"
+"\\p{N}"
+"\\p{Greek}"
+"\\P{L}"
+
+# Pathological nesting
+"(((a)))"
+"(a(b(c(d(e)f)g)h)i)"
+"(a+)+"
+"(a*)*"
+"(a?)+"
