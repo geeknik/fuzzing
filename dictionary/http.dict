@@ -1,0 +1,74 @@
+# Methods
+"GET "
+"POST "
+"HEAD "
+"PUT "
+"DELETE "
+"OPTIONS "
+"TRACE "
+"CONNECT "
+"PATCH "
+
+# Request line fragments
+" HTTP/1.0\r\n"
+" HTTP/1.1\r\n"
+" HTTP/2.0\r\n"
+" * HTTP/1.1\r\n"
+
+# Status line fragments
+"HTTP/1.1 200 OK\r\n"
+"HTTP/1.1 302 Found\r\n"
+"HTTP/1.1 400 Bad Request\r\n"
+"HTTP/1.1 404 Not Found\r\n"
+"HTTP/1.1 500 Internal Server Error\r\n"
+"HTTP/1.1 101 Switching Protocols\r\n"
+
+# Common headers (normalized)
+"Host: "
+"User-Agent: "
+"Accept: "
+"Accept-Encoding: "
+"Accept-Language: "
+"Connection: "
+"Content-Type: "
+"Content-Length: "
+"Transfer-Encoding: chunked\r\n"
+"Upgrade: websocket\r\n"
+"Upgrade-Insecure-Requests: 1\r\n"
+"X-Forwarded-For: "
+"X-Real-IP: "
+"Cookie: "
+"Set-Cookie: "
+
+# Header separators
+"\r\n"
+"\n"
+"\r\n\r\n"
+"\n\n"
+
+# Path patterns
+"/"
+"/index.html"
+"/../../etc/passwd"
+"/%2e%2e/%2e%2e/etc/passwd"
+"/api/v1/test"
+"/%00"
+"/?id=1"
+"/?id=1&id=2"
+"/?q=%0d%0aInjected:header"
+
+# Chunked encoding fragments
+"0\r\n\r\n"
+"1\r\nA\r\n0\r\n\r\n"
+"FFFFFFFF\r\n"
+"FFFFFFFFF\r\n"  # overlong
+"5\r\n12345\r\n0\r\n\r\n"
+
+# Connection tokens
+"keep-alive"
+"close"
+"Upgrade"
+"WebSocket"
+
+# HTTP/2 preface
+"PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n"
