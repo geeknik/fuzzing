@@ -1,0 +1,74 @@
+# ELF magic
+"\x7f""ELF"
+"\x7fELF"
+
+# EI_CLASS
+"\x01"  # 32-bit
+"\x02"  # 64-bit
+
+# EI_DATA
+"\x01"  # little-endian
+"\x02"  # big-endian
+
+# EI_VERSION
+"\x01"
+
+# EI_OSABI
+"\x00"  # System V
+"\x03"  # Linux
+"\xff"  # unknown / max
+
+# ELF types (e_type)
+"\x00\x00"  # ET_NONE
+"\x02\x00"  # ET_EXEC
+"\x03\x00"  # ET_DYN
+"\x01\x00"  # ET_REL
+"\xff\xff"  # max
+
+# Machine types (e_machine) – little-endian examples
+"\x03\x00"  # EM_386
+"\x3e\x00"  # EM_X86_64
+"\x28\x00"  # EM_ARM
+"\xb7\x00"  # EM_AARCH64
+"\x00\xff"  # weird
+
+# Program header types (p_type)
+"\x00\x00\x00\x00"  # PT_NULL
+"\x01\x00\x00\x00"  # PT_LOAD
+"\x02\x00\x00\x00"  # PT_DYNAMIC
+"\x03\x00\x00\x00"  # PT_INTERP
+"\x04\x00\x00\x00"  # PT_NOTE
+"\x06\x00\x00\x00"  # PT_PHDR
+"\x07\x00\x00\x00"  # PT_TLS
+"\x65\x00\x00\x00"  # PT_GNU_EH_FRAME
+"\x6474e550"        # PT_GNU_STACK (as text fragment)
+
+# Section header types (sh_type)
+"\x00\x00\x00\x00"  # SHT_NULL
+"\x01\x00\x00\x00"  # SHT_PROGBITS
+"\x02\x00\x00\x00"  # SHT_SYMTAB
+"\x03\x00\x00\x00"  # SHT_STRTAB
+"\x08\x00\x00\x00"  # SHT_NOBITS
+"\x0b\x00\x00\x00"  # SHT_DYNSYM
+
+# Common section names (as strings)
+".text"
+".data"
+".bss"
+".rodata"
+".eh_frame"
+".symtab"
+".strtab"
+".dynamic"
+".got"
+".got.plt"
+".plt"
+".init"
+".fini"
+".comment"
+
+# ELF identification length bytes (e_ehsize, etc.)
+"\x34\x00"  # 52 (ELF32)
+"\x40\x00"  # 64 (ELF64)
+"\x00\x00"
+"\xff\xff"
