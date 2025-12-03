@@ -1,0 +1,46 @@
+# PNG signature
+"\x89PNG\r\n\x1a\n"
+
+# Common chunk types
+"IHDR"
+"PLTE"
+"IDAT"
+"IEND"
+"tRNS"
+"gAMA"
+"cHRM"
+"sRGB"
+"pHYs"
+"iTXt"
+"tEXt"
+"zTXt"
+
+# IHDR sizes (width/height)
+"\x00\x00\x00\x01"   # 1
+"\x00\x00\x00\x10"   # 16
+"\x00\x00\x01\x00"   # 256
+"\x7f\xff\xff\xff"   # large
+"\xff\xff\xff\xff"   # max
+
+# Bit depth + color type
+"\x01\x00"   # 1-bit grayscale
+"\x08\x02"   # 8-bit truecolor
+"\x08\x03"   # 8-bit indexed
+"\x08\x06"   # 8-bit RGBA
+"\x10\x02"   # 16-bit truecolor
+
+# Compression / filter / interlace fields
+"\x00\x00\x00"  # compression=0, filter=0, interlace=0
+"\x01\x01\x01"  # invalid combos
+
+# Chunk length edge-cases
+"\x00\x00\x00\x00"
+"\x00\x00\x00\x01"
+"\x00\x00\x00\x0d"
+"\xff\xff\xff\xff"
+
+# Text-like chunk payloads
+"Title"
+"Author"
+"Comment"
+"\x00latin1\x00Some text"
