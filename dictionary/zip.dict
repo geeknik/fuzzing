@@ -1,0 +1,51 @@
+# Local file header signature
+"\x50\x4b\x03\x04"
+
+# Central directory header signature
+"\x50\x4b\x01\x02"
+
+# End of central directory signature
+"\x50\x4b\x05\x06"
+
+# ZIP64 end of central directory
+"\x50\x4b\x06\x06"
+"\x50\x4b\x06\x07"
+
+# Versions
+"\x14\x00"   # 2.0
+"\x2d\x00"   # 4.5 (ZIP64)
+"\x00\x00"
+"\xff\xff"
+
+# Compression methods
+"\x00\x00"   # stored
+"\x08\x00"   # deflate
+"\x09\x00"   # deflate64
+"\x0a\x00"   # imploded
+"\x63\x00"   # LZMA
+"\xff\xff"   # max/invalid
+
+# Flags (general purpose bit flag)
+"\x00\x00"
+"\x01\x00"   # encrypted
+"\x08\x00"   # data descriptor
+"\x20\x00"   # strong encryption
+"\xff\xff"
+
+# File name patterns
+"file.txt"
+"test/"
+"../evil"
+"../../etc/passwd"
+"C:\\boot.ini"
+"longfilename_longfilename_longfilename.txt"
+
+# Extra field IDs
+"\x01\x00"   # ZIP64
+"\x55\x54"   # extended timestamp
+"\x6e\x75"   # Unix
+"\x07\x00"   # AV
+"\xff\xff"
+
+# Data descriptor signature
+"\x50\x4b\x07\x08"
