@@ -1,0 +1,66 @@
+# Tables and subtables
+"[table]"
+"[table.sub]"
+"[table.sub.sub]"
+
+# Arrays of tables
+"[[array]]"
+"[[array.sub]]"
+
+# Key forms
+"key"
+"key_name"
+"key-name"
+"\"quoted-key\""
+"'literal-key'"
+
+# Separators
+"="
+" = "
+"\n"
+"\r\n"
+
+# Primitive values
+"true"
+"false"
+"0"
+"1"
+"-1"
+"0.0"
+"-0.0"
+"1.23"
+"1e6"
+"-1e-6"
+
+# Strings
+"\"\""
+"\"simple\""
+"\"with \\n newline\""
+"\"with \\t tab\""
+"\"with \\u00e9\""
+"'''literal string'''"
+"\"\"\"multi\nline\"\"\""
+
+# Date/time
+"1979-05-27T07:32:00Z"
+"1979-05-27T00:32:00-07:00"
+"1979-05-27"
+"07:32:00"
+"00:00:00"
+
+# Arrays
+"[]"
+"[1, 2, 3]"
+"[\"a\", \"b\", \"c\"]"
+"[[1, 2], [3, 4]]"
+"[1979-05-27T07:32:00Z, 1979-05-27T07:32:00Z]"
+
+# Dotted keys
+"root.key = 1"
+"root.sub.key = \"x\""
+"a.b.c = true"
+
+# Comments
+"#"
+"# comment"
+"key = 1 # inline"
