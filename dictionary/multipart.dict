@@ -1,0 +1,51 @@
+# Content-Type header with boundary
+"Content-Type: multipart/form-data; boundary="
+"Content-Type: multipart/mixed; boundary="
+"Content-Type: multipart/related; boundary="
+
+# Boundary prefixes
+"--"
+"--boundary"
+"--BOUNDARY"
+"--AaB03x"
+"--AaB03x\r\n"
+"--AaB03x--"
+"--AaB03x--\r\n"
+
+# CRLF variations
+"\r\n"
+"\n"
+"\r\n\r\n"
+"\n\n"
+
+# Typical part headers
+"Content-Disposition: form-data; name=\"field1\""
+"Content-Disposition: form-data; name=\"file\"; filename=\"test.txt\""
+"Content-Type: text/plain"
+"Content-Type: application/octet-stream"
+"Content-Transfer-Encoding: binary"
+"Content-Transfer-Encoding: base64"
+
+# Part separation patterns
+"\r\n\r\n"   # header/body separator
+"\n\n"       # lf-only
+"\r\n--"
+"\n--"
+
+# Filenames with path tricks
+"filename=\"../../etc/passwd\""
+"filename=\"C:\\\\Windows\\\\win.ini\""
+"filename=\"%00.jpg\""
+"filename=\"test\r\nX-Injected: 1\""
+
+# Content sniffing bait
+"GIF89a"
+"%PDF-1.5"
+"PK\x03\x04"
+"\xFF\xD8\xFF\xE0"
+
+# Parameter names
+"name=\"username\""
+"name=\"password\""
+"name=\"file\""
+"name=\"json\""
