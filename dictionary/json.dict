@@ -1,0 +1,69 @@
+# Structural tokens
+"{"
+"}"
+"["
+"]"
+":"
+","
+"null"
+"true"
+"false"
+
+# Strings and escapes
+"\"\""
+"\"a\""
+"\"\\n\""
+"\"\\r\""
+"\"\\t\""
+"\"\\\"\""
+"\"\\\\\""
+"\"\\u0000\""
+"\"\\uD800\""
+"\"\\uDC00\""
+"\"\\uD800\\uDC00\""  # valid surrogate pair
+"\"\\uD800\\uD800\""  # invalid
+"\"𝔘𝔫𝔦𝔠𝔬𝔡𝔢\""
+
+# Numbers
+"0"
+"-0"
+"1"
+"-1"
+"1234567890"
+"0.0"
+"-0.0"
+"1.0"
+"1e10"
+"1E-10"
+"-1.234e+20"
+"01"             # leading zero
+"00"
+"-.1"
+".1"
+
+# Common object patterns
+"{\"key\":\"value\"}"
+"{\"a\":1,\"b\":2}"
+"{\"nested\":{\"x\":1}}"
+"{\"arr\":[1,2,3]}"
+"{\"bool\":true}"
+"{\"null\":null}"
+
+# Pathological whitespace
+"{ \n\t\r \"a\" \t : \n 1 \r }"
+
+# API-ish keys
+"\"id\""
+"\"name\""
+"\"username\""
+"\"password\""
+"\"token\""
+"\"role\""
+
+# Arrays
+"[]"
+"[1]"
+"[1,2,3]"
+"[true,false,null]"
+"[\"a\",\"b\",\"c\"]"
+"[{\"x\":1},{\"y\":2}]"
