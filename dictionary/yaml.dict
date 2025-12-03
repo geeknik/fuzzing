@@ -1,0 +1,84 @@
+# Scalars and basic types
+"null"
+"Null"
+"NULL"
+"~"
+"true"
+"True"
+"TRUE"
+"false"
+"False"
+"FALSE"
+"0"
+"1"
+"-1"
+"0.0"
+".inf"
+"-.inf"
+".nan"
+
+# Indicators
+"- "
+"-"
+"? "
+": "
+"---"
+"..."
+
+# Mapping / sequence structures
+"key: value"
+"- item"
+"- key: value"
+"key: [1, 2, 3]"
+"key: {a: 1, b: 2}"
+
+# Indentation / whitespace
+"  "
+"    "
+" \t"
+"\t"
+"\n"
+"\n\n"
+" \n \n"
+
+# Block scalars
+"|"
+"|+"
+"|-"
+">"
+">+"
+">-"
+"|\n  indented block\n"
+">\n  folded block\n"
+
+# Anchors and aliases
+"&anchor"
+"*anchor"
+"key: &anchor value"
+"other: *anchor"
+
+# Tags
+"!!str"
+"!!int"
+"!!map"
+"!!seq"
+"!!binary"
+"tag:yaml.org,2002:str"
+"!custom"
+"!custom-tag"
+
+# Flow collections
+"[1, 2, 3]"
+"{a: 1, b: 2}"
+"[a, [b, c], {d: 4}]"
+"{k: [1,2], m: {n: 3}}"
+
+# Document markers
+"---\n"
+"...\n"
+"---\nkey: value\n...\n"
+
+# Special / surprising keys
+"? \"complex key\"\n: value"
+"\"odd:colon\": value"
+"\"#hash\": value"
