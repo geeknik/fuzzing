@@ -1,0 +1,66 @@
+{
+  "<start>": [
+    ["504B0304", "<versionNeeded>", "<flags>", "<compression>", "<time>", "<date>", "<crc32>", "<compSize>", "<uncompSize>", "<fileNameLen>", "<extraLen>", "<fileName>", "<extra>"]
+  ],
+
+  "<versionNeeded>": [
+    ["1400"],
+    ["2D00"],
+    ["0000"],
+    ["FFFF"]
+  ],
+  "<flags>": [
+    ["0000"],
+    ["0100"],
+    ["0800"],
+    ["FFFF"]
+  ],
+  "<compression>": [
+    ["0000"],
+    ["0800"],
+    ["0900"],
+    ["FFFF"]
+  ],
+  "<time>": [
+    ["0000"],
+    ["FFFF"]
+  ],
+  "<date>": [
+    ["0000"],
+    ["FFFF"]
+  ],
+  "<crc32>": [
+    ["00000000"],
+    ["FFFFFFFF"]
+  ],
+  "<compSize>": [
+    ["00000000"],
+    ["FFFFFFFF"]
+  ],
+  "<uncompSize>": [
+    ["00000000"],
+    ["FFFFFFFF"]
+  ],
+
+  "<fileNameLen>": [
+    ["0000"],
+    ["0A00"],
+    ["FF00"]
+  ],
+  "<extraLen>": [
+    ["0000"],
+    ["1000"],
+    ["FF00"]
+  ],
+
+  "<fileName>": [
+    ["746573742E747874"],      /* "test.txt" */
+    ["2E2E2F2E2E2F6574632F706173737764"], /* "../.. /etc/passwd" */
+    [""]
+  ],
+  "<extra>": [
+    [""],
+    ["0100"],
+    ["01004C00"]
+  ]
+}
