@@ -1,0 +1,53 @@
+{
+  "<start>": [
+    ["7F454C46", "<ei_class>", "<ei_data>", "<ei_version>", "<ei_osabi>", "<ei_abiversion>", "<ei_pad>", "<e_type>", "<e_machine>", "<e_version2>"]
+  ],
+
+  "<ei_class>": [
+    ["01"],    /* 32-bit */
+    ["02"]     /* 64-bit */
+  ],
+  "<ei_data>": [
+    ["01"],    /* little-endian */
+    ["02"]     /* big-endian */
+  ],
+  "<ei_version>": [
+    ["01"]
+  ],
+  "<ei_osabi>": [
+    ["00"],
+    ["03"],
+    ["FF"]
+  ],
+  "<ei_abiversion>": [
+    ["00"],
+    ["01"],
+    ["FF"]
+  ],
+  "<ei_pad>": [
+    ["000000000000"],     /* EI_NIDENT=16 total */
+    ["FFFFFFFFFFFF"]
+  ],
+
+  "<e_type>": [
+    ["0000"],
+    ["0200"],
+    ["0300"],
+    ["FF00"],
+    ["FFFF"]
+  ],
+
+  "<e_machine>": [
+    ["0300"],
+    ["3E00"],
+    ["2800"],
+    ["B700"],
+    ["FFFF"]
+  ],
+
+  "<e_version2>": [
+    ["01000000"],
+    ["00000000"],
+    ["FFFFFFFF"]
+  ]
+}
