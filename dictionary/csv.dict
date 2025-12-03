@@ -1,0 +1,38 @@
+# Delimiters
+","
+";"
+"\t"
+"|"
+
+# Newlines
+"\n"
+"\r\n"
+"\r"
+"\n\n"
+
+# Simple fields
+""
+"field"
+"123"
+"0"
+"-1"
+"\"quoted\""
+"\"with,comma\""
+"\"with\nnewline\""
+"\"with\"\"quote\"\"inside\""
+
+# Records
+"a,b,c"
+"\"a\",\"b\",\"c\""
+"a,,c"
+",,"
+"1,2,3,4,5"
+"\"a\",\"b\nb\",\"c\""
+
+# Odd combinations
+"\""
+"\"\""
+"\"\"\""
+"\"unclosed"
+"\"quoted\",unquoted"
+"unquoted,\"quoted\""
