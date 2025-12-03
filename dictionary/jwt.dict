@@ -1,0 +1,86 @@
+# Structure tokens
+"."
+".."
+"header.payload.signature"
+
+# Common header fields
+"alg"
+"typ"
+"kid"
+"cty"
+"crit"
+
+# Token types
+"JWT"
+"JOSE"
+
+# Algorithms (alg)
+"none"
+"HS256"
+"HS384"
+"HS512"
+"RS256"
+"RS384"
+"RS512"
+"ES256"
+"ES384"
+"ES512"
+"PS256"
+"PS384"
+"PS512"
+"EdDSA"
+
+# Base64URL edge fragments
+""
+"."
+"=="
+"AA"
+"AAA"
+"AAAA"
+"A.A.A"
+"AAAAAAAAAAAAAAAAAAAA"
+"////////"
+"____"
+"-_-=."
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"  # {"alg":"HS256","typ":"JWT"}
+
+# Common claims
+"iss"
+"sub"
+"aud"
+"exp"
+"nbf"
+"iat"
+"jti"
+"scope"
+
+# JSON values inside payload
+"\"admin\""
+"\"user\""
+"true"
+"false"
+"null"
+"0"
+"1"
+"-1"
+"9999999999"
+
+# JWK-ish fields
+"kty"
+"RSA"
+"EC"
+"oct"
+"n"
+"e"
+"x"
+"y"
+"d"
+"p"
+"q"
+
+# Misleading alg/header combos
+"{\"alg\":\"none\"}"
+"{\"alg\":\"HS256\"}"
+"{\"alg\":\"RS256\"}"
+"{\"typ\":\"JWT\"}"
+"{\"typ\":\"JWT\",\"alg\":\"none\"}"
