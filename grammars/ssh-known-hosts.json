@@ -1,0 +1,76 @@
+{
+  "<start>": [
+    ["<knownHostsLine>"],
+    ["<knownHostsLine>", "<knownHostsLine>"]
+  ],
+
+  "<knownHostsLine>": [
+    ["<hostSpec>", " ", "<keyType>", " ", "<base64Key>", " ", "<commentOpt>", "\n"]
+  ],
+
+  "<hostSpec>": [
+    ["<hostname>"],
+    ["[", "<hostname>", "]:22"],
+    ["|1|", "<base64Salt>", "|", "<base64Hash>"]
+  ],
+  "<hostname>": [
+    ["localhost"],
+    ["127.0.0.1"],
+    ["example.com"],
+    ["<label>", ".", "<label>", ".", "<tld>"]
+  ],
+  "<label>": [
+    ["www"],
+    ["ssh"],
+    ["host"],
+    ["<labelChar>"],
+    ["<labelChar>", "<label>"]
+  ],
+  "<labelChar>": [
+    ["a"], ["b"], ["c"], ["d"], ["e"], ["f"], ["g"], ["h"], ["i"], ["j"],
+    ["k"], ["l"], ["m"], ["n"], ["o"], ["p"], ["q"], ["r"], ["s"], ["t"],
+    ["u"], ["v"], ["w"], ["x"], ["y"], ["z"],
+    ["0"], ["1"], ["2"], ["3"], ["4"], ["5"], ["6"], ["7"], ["8"], ["9"],
+    ["-"]
+  ],
+  "<tld>": [
+    ["com"],
+    ["net"],
+    ["org"]
+  ],
+
+  "<keyType>": [
+    ["ssh-rsa"],
+    ["ssh-ed25519"],
+    ["ecdsa-sha2-nistp256"]
+  ],
+
+  "<base64Key>": [
+    ["<base64Char>", "<base64Key>"],
+    ["<base64Char>"]
+  ],
+  "<base64Salt>": [
+    ["<base64Char>", "<base64Salt>"],
+    ["<base64Char>"]
+  ],
+  "<base64Hash>": [
+    ["<base64Char>", "<base64Hash>"],
+    ["<base64Char>"]
+  ],
+  "<base64Char>": [
+    ["A"], ["B"], ["C"], ["D"], ["E"], ["F"], ["G"], ["H"], ["I"], ["J"],
+    ["K"], ["L"], ["M"], ["N"], ["O"], ["P"], ["Q"], ["R"], ["S"], ["T"],
+    ["U"], ["V"], ["W"], ["X"], ["Y"], ["Z"],
+    ["a"], ["b"], ["c"], ["d"], ["e"], ["f"], ["g"], ["h"], ["i"], ["j"],
+    ["k"], ["l"], ["m"], ["n"], ["o"], ["p"], ["q"], ["r"], ["s"], ["t"],
+    ["u"], ["v"], ["w"], ["x"], ["y"], ["z"],
+    ["0"], ["1"], ["2"], ["3"], ["4"], ["5"], ["6"], ["7"], ["8"], ["9"],
+    ["+"], ["/"], ["="]
+  ],
+
+  "<commentOpt>": [
+    [""],
+    ["#", "known-host"],
+    ["user@host"]
+  ]
+}
